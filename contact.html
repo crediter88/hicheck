@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>문의하기 | 하이체크 D&C</title>
     <style>
         /* 기본 배경 */
@@ -14,23 +14,27 @@
             margin: 0;
             font-family: 'Malgun Gothic', sans-serif;
             color: #eeeeee;
+            overflow-x: hidden;
         }
 
         .overlay {
-            background-color: rgba(0, 0, 0, 0.7); 
+            background-color: rgba(0, 0, 0, 0.75); 
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-sizing: border-box;
         }
 
         /* 상단 네비게이션 바 */
         .top-nav {
-            width: 100%; padding: 40px 0;
-            display: flex; justify-content: center; gap: 60px;
+            width: 100%; padding: 40px 10px;
+            display: flex; justify-content: center; gap: 40px;
+            box-sizing: border-box;
         }
         .top-nav a {
             color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; opacity: 0.7; transition: 0.3s;
+            white-space: nowrap;
         }
         .top-nav a:hover, .top-nav a.active {
             opacity: 1; color: #CBA171;
@@ -42,13 +46,14 @@
             backdrop-filter: blur(10px); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
             border-radius: 15px; 
-            padding: 70px 80px; 
-            max-width: 600px; 
-            width: 85%;
-            margin-top: 50px; 
+            padding: 60px 50px; 
+            max-width: 650px; 
+            width: 90%;
+            margin-top: 30px; 
             margin-bottom: 80px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
             text-align: center;
+            box-sizing: border-box;
         }
 
         /* 제목 영역 */
@@ -56,13 +61,14 @@
             font-size: 32px; color: #CBA171; margin-top: 0; margin-bottom: 10px; letter-spacing: 2px;
         }
         .contact-box .subtitle {
-            font-size: 16px; color: #aaaaaa; margin-bottom: 50px; letter-spacing: 1px;
+            font-size: 16px; color: #aaaaaa; margin-bottom: 40px; letter-spacing: 0.5px;
+            word-break: keep-all; line-height: 1.4;
         }
 
         /* 연락처 정보 리스트 */
         .info-list {
             text-align: left;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             border-top: 1px solid rgba(255,255,255,0.1);
             border-bottom: 1px solid rgba(255,255,255,0.1);
             padding: 30px 0;
@@ -71,29 +77,30 @@
             margin-bottom: 20px;
             font-size: 16px;
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* 주소가 길어질 경우 대비 */
         }
         .info-item:last-child { margin-bottom: 0; }
         .info-label {
             color: #CBA171;
             font-weight: bold;
-            width: 100px; /* 라벨 넓이를 고정하여 정갈하게 줄맞춤 */
+            width: 90px;
             flex-shrink: 0;
         }
         .info-value {
             color: #dddddd;
             line-height: 1.5;
+            word-break: keep-all;
         }
 
         /* ⭐️ 터치 연결 버튼 (전화 / 이메일) */
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
         .action-btn {
-            padding: 15px 30px;
+            padding: 15px 25px;
             font-size: 16px;
             font-weight: bold;
             color: #191919;
@@ -104,6 +111,9 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex: 1; /* 버튼 너비를 동일하게 */
+            min-width: 200px;
+            justify-content: center;
         }
         .action-btn:hover {
             background-color: #ffffff;
@@ -120,12 +130,21 @@
             background-color: rgba(255,255,255,0.1);
         }
 
-        /* 모바일 최적화 */
-        @media (max-width: 600px) {
-            .contact-box { padding: 50px 30px; }
-            .info-item { flex-direction: column; align-items: flex-start; gap: 5px; }
-            .top-nav { gap: 20px; font-size: 14px; flex-wrap: wrap; }
-            .action-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+        /* ⭐️⭐️⭐️ 모바일 보수 공사 (800px 이하) ⭐️⭐️⭐️ */
+        @media (max-width: 800px) {
+            .top-nav { padding: 20px 10px; gap: 15px; flex-wrap: wrap; }
+            .top-nav a { font-size: 14px; }
+            
+            .contact-box { padding: 40px 25px; margin-top: 20px; }
+            .contact-box h2 { font-size: 26px; }
+            .contact-box .subtitle { font-size: 14px; }
+            
+            .info-item { flex-direction: column; gap: 5px; }
+            .info-label { font-size: 14px; margin-bottom: 2px; }
+            .info-value { font-size: 15px; }
+
+            .btn-group { flex-direction: column; }
+            .action-btn { width: 100%; min-width: unset; }
         }
     </style>
 </head>
@@ -137,9 +156,10 @@
             <a href="index.html">HOME</a>
             <a href="about.html">회사소개</a>
             <a href="fields.html">시공분야</a>
-            <a href="proposal.html">파트너십제안서</a>
+            <a href="proposal.html">파트너십 제안서</a>
             <a href="portfolio.html">포트폴리오</a>
-            <a href="contact.html" class="active">문의하기</a> </div>
+            <a href="contact.html" class="active">문의하기</a>
+        </div>
 
         <div class="contact-box">
             <h2>CONTACT US</h2>
@@ -165,8 +185,8 @@
             </div>
 
             <div class="btn-group">
-                <a href="tel:033-000-0000" class="action-btn">📞 전화 상담하기</a>
-                <a href="mailto:info@hicheck.com" class="action-btn outline">✉️ 이메일 보내기</a>
+                <a href="tel:01048281149" class="action-btn">📞 전화 상담하기</a>
+                <a href="mailto:kh73kim@naver.com" class="action-btn outline">✉️ 이메일 보내기</a>
             </div>
         </div>
 

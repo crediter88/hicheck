@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>회사소개 | 하이체크 D&C</title>
     <style>
         /* 배경 설정 */
@@ -13,52 +14,61 @@
             margin: 0;
             font-family: 'Malgun Gothic', sans-serif;
             color: #eeeeee;
+            overflow-x: hidden;
         }
 
         .overlay {
-            background-color: rgba(0, 0, 0, 0.6); 
+            background-color: rgba(0, 0, 0, 0.7); /* 모바일 가독성을 위해 배경을 조금 더 어둡게 조정 */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-sizing: border-box;
         }
 
-        /* ⭐️ 상단 네비게이션 (파트너십 제안서 링크 수정됨) */
+        /* 상단 네비게이션 - 모바일 대응 */
         .top-nav {
-            width: 100%; padding: 40px 0;
-            display: flex; justify-content: center; gap: 60px;
+            width: 100%; padding: 40px 10px;
+            display: flex; justify-content: center; gap: 40px;
+            box-sizing: border-box;
+            z-index: 10;
         }
         .top-nav a {
             color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; opacity: 0.7; transition: 0.3s;
+            white-space: nowrap; /* 세로쓰기 방지 */
         }
         .top-nav a:hover, .top-nav a.active {
             opacity: 1; color: #CBA171;
         }
 
-        /* 컨텐츠 박스 */
+        /* 컨텐츠 박스 - 너비를 가변형(%)으로 수정 */
         .content-box {
-            background: rgba(30, 30, 30, 0.7); 
+            background: rgba(30, 30, 30, 0.75); 
             backdrop-filter: blur(10px); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
             border-radius: 15px; 
-            padding: 70px 60px; 
+            padding: 60px 50px; 
+            width: 90%; /* 모바일에서 좌우 여백 확보 */
             max-width: 650px; 
-            margin-top: 40px; margin-bottom: 80px;
+            margin-top: 30px; margin-bottom: 60px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+            box-sizing: border-box;
         }
 
         .title-area {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-            padding-bottom: 30px;
+            padding-bottom: 25px;
         }
         h2 {
             font-size: 28px; color: #CBA171; margin-top: 0; margin-bottom: 15px; letter-spacing: 2px;
         }
         .subtitle {
-            font-size: 16px; color: #ffffff; letter-spacing: 1px;
+            font-size: 17px; color: #ffffff; letter-spacing: 0.5px;
             font-weight: bold; 
+            line-height: 1.4;
+            word-break: keep-all;
         }
         
         .text-content {
@@ -70,16 +80,39 @@
             line-height: 1.9; 
             margin-bottom: 25px; 
             color: #dddddd; 
-            word-break: keep-all; 
+            word-break: keep-all; /* 단어 단위 줄바꿈으로 깔끔하게 유지 */
         }
 
         .signature {
-            margin-top: 60px; 
+            margin-top: 50px; 
             text-align: right; 
             font-size: 16px;
             font-weight: bold;
             color: #CBA171;
             letter-spacing: 1px;
+        }
+
+        /* ⭐️⭐️⭐️ 모바일 보수 공사 (800px 이하) ⭐️⭐️⭐️ */
+        @media (max-width: 800px) {
+            .top-nav {
+                padding: 20px 10px;
+                gap: 15px;
+                flex-wrap: wrap; /* 메뉴가 넘치면 다음 줄로 */
+            }
+            .top-nav a { font-size: 14px; }
+
+            .content-box {
+                padding: 40px 25px; /* 내부 여백 축소 */
+                margin-top: 20px;
+            }
+            h2 { font-size: 24px; }
+            .subtitle { font-size: 15px; }
+            .text-content p {
+                font-size: 15px; /* 폰트 크기 살짝 조정 */
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+            .signature { font-size: 15px; margin-top: 40px; }
         }
     </style>
 </head>

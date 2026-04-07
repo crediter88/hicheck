@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
     <title>시공분야 | 하이체크 D&C</title>
     <style>
         /* 기본 배경 (대문 사진 고정) */
@@ -14,30 +14,34 @@
             margin: 0;
             font-family: 'Malgun Gothic', sans-serif;
             color: #eeeeee;
+            overflow-x: hidden;
         }
 
         .overlay {
-            background-color: rgba(0, 0, 0, 0.6); 
+            background-color: rgba(0, 0, 0, 0.7); 
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-bottom: 80px; 
+            box-sizing: border-box;
         }
 
-        /* 상단 네비게이션 바 (모든 링크 최신화) */
+        /* 상단 네비게이션 바 */
         .top-nav {
-            width: 100%; padding: 40px 0;
-            display: flex; justify-content: center; gap: 60px;
+            width: 100%; padding: 40px 10px;
+            display: flex; justify-content: center; gap: 40px;
+            box-sizing: border-box;
         }
         .top-nav a {
             color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; opacity: 0.7; transition: 0.3s;
+            white-space: nowrap;
         }
         .top-nav a:hover, .top-nav a.active {
             opacity: 1; color: #CBA171;
         }
 
-        /* 좌우 분할 컨테이너 */
+        /* 좌우 분할 컨테이너 - 가변형으로 수정 */
         .fields-container {
             display: flex; 
             justify-content: center;
@@ -49,14 +53,15 @@
 
         /* 반투명 흑유리 카드 */
         .field-card {
-            background: rgba(30, 30, 30, 0.7); 
+            background: rgba(30, 30, 30, 0.75); 
             backdrop-filter: blur(10px); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
             border-radius: 15px; 
-            padding: 50px 60px;
+            padding: 50px 45px;
             flex: 1; 
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
             transition: 0.3s;
+            box-sizing: border-box;
         }
         
         .field-card:hover {
@@ -65,15 +70,16 @@
         }
 
         .card-title {
-            font-size: 26px;
+            font-size: 24px;
             color: #CBA171;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 20px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            white-space: nowrap; /* 세로쓰기 방지 */
         }
 
-        .category-group { margin-bottom: 35px; }
+        .category-group { margin-bottom: 30px; }
         
         .cat-name {
             font-size: 18px;
@@ -82,17 +88,19 @@
             margin-bottom: 12px;
             display: flex;
             align-items: center;
+            word-break: keep-all;
         }
         .cat-name::before {
             content: "■";
             font-size: 10px;
             color: #CBA171;
             margin-right: 10px;
+            flex-shrink: 0;
         }
 
         .project-list {
             list-style: none; 
-            padding-left: 20px; 
+            padding-left: 15px; 
             margin: 0;
             border-left: 1px dashed rgba(255, 255, 255, 0.2); 
         }
@@ -103,7 +111,8 @@
             margin-bottom: 8px;
             position: relative;
             padding-left: 15px;
-            transition: 0.3s;
+            line-height: 1.5;
+            word-break: keep-all;
         }
         .project-list li::before {
             content: "";
@@ -114,11 +123,29 @@
             height: 1px;
             background-color: rgba(255, 255, 255, 0.2);
         }
-        .project-list li:hover { color: #ffffff; }
 
+        /* ⭐️⭐️⭐️ 모바일 긴급 보수 공사 (800px 이하) ⭐️⭐️⭐️ */
         @media (max-width: 800px) {
-            .fields-container { flex-direction: column; align-items: center; gap: 30px; }
-            .field-card { width: 100%; padding: 40px 30px; box-sizing: border-box; }
+            .top-nav {
+                padding: 20px 10px;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            .top-nav a { font-size: 14px; }
+
+            .fields-container { 
+                flex-direction: column; /* 세로 배치로 전환 */
+                align-items: center; 
+                gap: 30px; 
+                margin-top: 30px;
+            }
+            .field-card { 
+                width: 100%; 
+                padding: 40px 25px; 
+            }
+            .card-title { font-size: 20px; margin-bottom: 25px; }
+            .cat-name { font-size: 17px; }
+            .project-list li { font-size: 14px; }
         }
     </style>
 </head>
@@ -130,7 +157,8 @@
             <a href="index.html">HOME</a>
             <a href="about.html">회사소개</a>
             <a href="fields.html" class="active">시공분야</a> 
-            <a href="proposal.html">파트너십 제안서</a> <a href="portfolio.html">포트폴리오</a>
+            <a href="proposal.html">파트너십 제안서</a> 
+            <a href="portfolio.html">포트폴리오</a>
             <a href="contact.html">문의하기</a>
         </div>
 

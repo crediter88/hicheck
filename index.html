@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>하이체크 D&C | 공간의 가치를 증명하는 기록</title>
     <style>
         /* 1. 기본 마감 설정 */
@@ -24,19 +25,21 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center; /* 모바일 대응 */
         }
 
-        /* 상단 메뉴바 */
+        /* 상단 메뉴바 - 모바일에서 유연하게 배치 */
         .top-nav {
-            position: absolute; top: 0; width: 100%; padding: 40px 0;
-            display: flex; justify-content: center; gap: 60px; z-index: 10;
+            position: absolute; top: 0; width: 100%; padding: 40px 10px;
+            display: flex; justify-content: center; gap: 40px; z-index: 10;
+            box-sizing: border-box;
         }
-        .top-nav a { color: white; text-decoration: none; font-size: 17px; font-weight: bold; opacity: 0.7; transition: 0.3s; }
+        .top-nav a { color: white; text-decoration: none; font-size: 16px; font-weight: bold; opacity: 0.7; transition: 0.3s; white-space: nowrap; }
         .top-nav a:hover, .top-nav a.active { opacity: 1; color: #CBA171; }
 
         /* 중앙 로고 및 버튼 */
-        .logo-img { width: 400px; max-width: 50%; margin-bottom: 40px; filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5)); }
-        .cta-btn { padding: 15px 40px; font-size: 18px; font-weight: bold; color: white; text-decoration: none; border: 2px solid rgba(255,255,255,0.7); border-radius: 50px; transition: 0.3s; }
+        .logo-img { width: 400px; max-width: 80%; margin-bottom: 40px; filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5)); }
+        .cta-btn { padding: 15px 30px; font-size: 17px; font-weight: bold; color: white; text-decoration: none; border: 2px solid rgba(255,255,255,0.7); border-radius: 500px; transition: 0.3s; }
         .cta-btn:hover { background-color: #CBA171; border-color: #CBA171; color: #191919; }
 
         /* 스크롤 유도 화살표 애니메이션 */
@@ -58,38 +61,53 @@
             text-align: center;
             background-color: #191919;
         }
-        .section-title { font-size: 32px; margin-bottom: 60px; color: #CBA171; }
+        .section-title { font-size: 32px; margin-bottom: 60px; color: #CBA171; letter-spacing: -1px; }
         
         .shelf-container {
-            display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
         }
         
         .book-item {
             width: 300px; background: #252525; padding: 20px; border-radius: 10px;
             transition: 0.3s; cursor: pointer; text-decoration: none; color: white; display: block;
+            box-sizing: border-box;
         }
         .book-item:hover { transform: translateY(-15px); background: #333; }
         
-        /* 책 표지 설정 */
         .book-cover { 
             width: 100%; height: 420px; background: #444; margin-bottom: 20px; border-radius: 5px; 
             border: 1px solid rgba(255,255,255,0.1); box-sizing: border-box;
         } 
         
-        /* ⭐️ 책 제목 메인 폰트 설정 */
-        .book-title { font-size: 18px; font-weight: bold; line-height: 1.4; }
-        /* ⭐️ 책 부제목(한글) 폰트 설정 */
+        .book-title { font-size: 18px; font-weight: bold; line-height: 1.4; word-break: keep-all; }
         .book-subtitle { font-size: 14px; font-weight: normal; color: #aaaaaa; display: block; margin-top: 5px; }
 
-        /* 4. 카피라이트(푸터) 설정 */
+        /* 4. 푸터 설정 */
         footer {
-            padding: 50px 0; background-color: #111; border-top: 1px solid #333;
-            font-size: 14px; color: #888; line-height: 1.8; text-align: center;
+            padding: 50px 20px; background-color: #111; border-top: 1px solid #333;
+            font-size: 13px; color: #888; line-height: 1.8; text-align: center;
+            word-break: keep-all;
         }
 
-        /* 모바일 최적화 */
+        /* ⭐️⭐️⭐️ 모바일 긴급 보수 공사 (화면 폭 800px 이하) ⭐️⭐️⭐️ */
         @media (max-width: 800px) {
-            .top-nav { gap: 20px; font-size: 14px; flex-wrap: wrap; }
+            .top-nav { 
+                padding: 20px 10px; 
+                gap: 15px; /* 간격 축소 */
+                flex-wrap: wrap; /* 메뉴가 넘치면 다음 줄로 */
+            }
+            .top-nav a { font-size: 14px; opacity: 0.9; } /* 가독성 위해 더 진하게 */
+            
+            .logo-img { width: 280px; margin-bottom: 30px; }
+            .cta-btn { font-size: 15px; padding: 12px 25px; }
+
+            .section-title { font-size: 24px; margin-bottom: 40px; }
+            
+            .shelf-container { gap: 30px; }
+            .book-item { width: 100%; max-width: 340px; } /* 책을 모바일에서 크게 배치 */
+            .book-cover { height: 450px; } /* 모바일에서 표지 비율 조정 */
+            
+            footer { font-size: 12px; }
         }
     </style>
 </head>
@@ -136,7 +154,8 @@
 
     <footer>
         <div>(주)하이체크 D&C | 대표자: 김찬회 | 사업자등록번호: 248-36-01731</div>
-        <div>본사:경기도 남양주시 다산중앙로 19번길 23-25 F504호| 이메일: kh73kim@naver.com</div>
+        <div>본사: 경기도 남양주시 다산중앙로 19번길 23-25 F504호</div>
+        <div>이메일: kh73kim@naver.com</div>
         <div style="margin-top: 20px; letter-spacing: 1px;">&copy; 2026 HI-CHECK D&C. All Rights Reserved.</div>
     </footer>
 
