@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회사소개 | 하이체크 D&C</title>
+    <style>
+        /* 배경 설정 */
+        body {
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            margin: 0;
+            font-family: 'Malgun Gothic', sans-serif;
+            color: #eeeeee;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ⭐️ 상단 네비게이션 (파트너십 제안서 링크 수정됨) */
+        .top-nav {
+            width: 100%; padding: 40px 0;
+            display: flex; justify-content: center; gap: 60px;
+        }
+        .top-nav a {
+            color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; opacity: 0.7; transition: 0.3s;
+        }
+        .top-nav a:hover, .top-nav a.active {
+            opacity: 1; color: #CBA171;
+        }
+
+        /* 컨텐츠 박스 */
+        .content-box {
+            background: rgba(30, 30, 30, 0.7); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 15px; 
+            padding: 70px 60px; 
+            max-width: 650px; 
+            margin-top: 40px; margin-bottom: 80px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+        }
+
+        .title-area {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+            padding-bottom: 30px;
+        }
+        h2 {
+            font-size: 28px; color: #CBA171; margin-top: 0; margin-bottom: 15px; letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 16px; color: #ffffff; letter-spacing: 1px;
+            font-weight: bold; 
+        }
+        
+        .text-content {
+            text-align: left; 
+        }
+        .text-content p {
+            font-size: 16px; 
+            font-weight: 300; 
+            line-height: 1.9; 
+            margin-bottom: 25px; 
+            color: #dddddd; 
+            word-break: keep-all; 
+        }
+
+        .signature {
+            margin-top: 60px; 
+            text-align: right; 
+            font-size: 16px;
+            font-weight: bold;
+            color: #CBA171;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        
+        <div class="top-nav">
+            <a href="index.html">HOME</a>
+            <a href="about.html" class="active">회사소개</a>
+            <a href="fields.html">시공분야</a>
+            <a href="proposal.html">파트너십 제안서</a>
+            <a href="portfolio.html">포트폴리오</a>
+            <a href="contact.html">문의하기</a>
+        </div>
+
+        <div class="content-box">
+            
+            <div class="title-area">
+                <h2>ABOUT US</h2>
+                <div class="subtitle">성공적인 프로젝트 완수를 위한 최상의 시공 파트너</div>
+            </div>
+
+            <div class="text-content">
+                <p>하이체크 D&C는 단순한 인테리어 시공을 넘어, 원청사가 마주하는 현장의 모든 변수를 통제하고 지원하는 최상의 파트너십을 제공합니다.</p>
+                <p>다년간 축적된 현장 실무 노하우를 바탕으로, 오차 없는 시공 품질은 물론 철저한 안전 장구류 배포 및 노무 대장 관리까지 원청의 까다로운 행정 시스템을 완벽하게 서포트합니다.</p>
+                <p>보이지 않는 곳에서의 치열한 관리가 결국 공간의 가치를 증명합니다. 하이체크 D&C가 귀사의 프로젝트를 성공으로 이끄는 가장 든든한 기반이 되겠습니다.</p>
+                
+                <div class="signature">하이체크 D&C 임직원 일동</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

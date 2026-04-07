@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 | 하이체크 D&C</title>
+    <style>
+        body {
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            margin: 0;
+            font-family: 'Malgun Gothic', sans-serif;
+            color: #eeeeee;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.85); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 100px; 
+        }
+
+        /* 상단 네비게이션 (모든 링크 연결 완료) */
+        .top-nav {
+            width: 100%; padding: 40px 0;
+            display: flex; justify-content: center; gap: 60px;
+        }
+        .top-nav a {
+            color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; opacity: 0.7; transition: 0.3s;
+        }
+        .top-nav a:hover, .top-nav a.active {
+            opacity: 1; color: #CBA171;
+        }
+
+        .page-header {
+            margin-top: 50px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .page-header h2 {
+            font-size: 32px;
+            color: #CBA171;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+        .page-header p {
+            color: #aaaaaa;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .portfolio-grid {
+            width: 90%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px;
+        }
+
+        .port-card {
+            background: rgba(30, 30, 30, 0.7); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
+            overflow: hidden; 
+            text-decoration: none; 
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+        .port-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(203, 161, 113, 0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+        }
+
+        .port-thumb {
+            width: 100%;
+            height: 220px;
+            background-color: #222222;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .port-info {
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .port-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            word-break: keep-all;
+        }
+        .port-desc {
+            color: #CBA171;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .top-nav { gap: 20px; font-size: 14px; flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        
+        <div class="top-nav">
+            <a href="index.html">HOME</a>
+            <a href="about.html">회사소개</a>
+            <a href="fields.html">시공분야</a>
+            <a href="proposal.html">파트너십 제안서</a>
+            <a href="portfolio.html" class="active">포트폴리오</a>
+            <a href="contact.html">문의하기</a>
+        </div>
+
+        <div class="page-header">
+            <h2>OUR PORTFOLIO</h2>
+            <p>하이체크 D&C의 공간 가치 증명 기록</p>
+        </div>
+
+        <div class="portfolio-grid">
+            
+            <a href="gallery/port1.jpg" target="_blank" class="port-card">
+                <div class="port-thumb" style="background-image: url('thumbnail/thumb1.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="port-info">
+                    <div class="port-title">서울시 OO구 느린학습자센터 시설개선공사</div>
+                    <div class="port-desc">자세히 보기 ➔</div>
+                </div>
+            </a>
+
+            <a href="gallery/port2.jpg" target="_blank" class="port-card">
+                <div class="port-thumb" style="background-image: url('thumbnail/thumb2.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="port-info">
+                    <div class="port-title">OO시 OO고등학교 학점제실 및 천정공사</div>
+                    <div class="port-desc">자세히 보기 ➔</div>
+                </div>
+            </a>
+
+            <a href="gallery/port3.jpg" target="_blank" class="port-card">
+                <div class="port-thumb" style="background-image: url('thumbnail/thumb3.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="port-info">
+                    <div class="port-title">서울시 OO터널 기계실 환경공사</div>
+                    <div class="port-desc">자세히 보기 ➔</div>
+                </div>
+            </a>
+
+            <a href="gallery/port4.jpg" target="_blank" class="port-card">
+                <div class="port-thumb" style="background-image: url('thumbnail/thumb4.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="port-info">
+                    <div class="port-title">OO구 문화예술센터 시설보수공사</div>
+                    <div class="port-desc">자세히 보기 ➔</div>
+                </div>
+            </a>
+
+            <a href="gallery/port5.jpg" target="_blank" class="port-card">
+                <div class="port-thumb" style="background-image: url('thumbnail/thumb5.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="port-info">
+                    <div class="port-title">서울시 OO고등학교 환경개선공사</div>
+                    <div class="port-desc">자세히 보기 ➔</div>
+                </div>
+            </a>
+
+            <a href="gallery/port6.jpg" target="_blank" class="port-card">
+                <div class="port-thumb" style="background-image: url('thumbnail/thumb6.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="port-info">
+                    <div class="port-title">중앙OO관리위원회 본관 화장실 개·보수공사</div>
+                    <div class="port-desc">자세히 보기 ➔</div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

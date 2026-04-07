@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>시공분야 | 하이체크 D&C</title>
+    <style>
+        /* 기본 배경 (대문 사진 고정) */
+        body {
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            margin: 0;
+            font-family: 'Malgun Gothic', sans-serif;
+            color: #eeeeee;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 80px; 
+        }
+
+        /* 상단 네비게이션 바 (모든 링크 최신화) */
+        .top-nav {
+            width: 100%; padding: 40px 0;
+            display: flex; justify-content: center; gap: 60px;
+        }
+        .top-nav a {
+            color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; opacity: 0.7; transition: 0.3s;
+        }
+        .top-nav a:hover, .top-nav a.active {
+            opacity: 1; color: #CBA171;
+        }
+
+        /* 좌우 분할 컨테이너 */
+        .fields-container {
+            display: flex; 
+            justify-content: center;
+            gap: 40px; 
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 50px;
+        }
+
+        /* 반투명 흑유리 카드 */
+        .field-card {
+            background: rgba(30, 30, 30, 0.7); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 15px; 
+            padding: 50px 60px;
+            flex: 1; 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+            transition: 0.3s;
+        }
+        
+        .field-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(203, 161, 113, 0.4); 
+        }
+
+        .card-title {
+            font-size: 26px;
+            color: #CBA171;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .category-group { margin-bottom: 35px; }
+        
+        .cat-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .cat-name::before {
+            content: "■";
+            font-size: 10px;
+            color: #CBA171;
+            margin-right: 10px;
+        }
+
+        .project-list {
+            list-style: none; 
+            padding-left: 20px; 
+            margin: 0;
+            border-left: 1px dashed rgba(255, 255, 255, 0.2); 
+        }
+        .project-list li {
+            font-size: 15px;
+            color: #bbbbbb;
+            font-weight: 300;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+            transition: 0.3s;
+        }
+        .project-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .project-list li:hover { color: #ffffff; }
+
+        @media (max-width: 800px) {
+            .fields-container { flex-direction: column; align-items: center; gap: 30px; }
+            .field-card { width: 100%; padding: 40px 30px; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        
+        <div class="top-nav">
+            <a href="index.html">HOME</a>
+            <a href="about.html">회사소개</a>
+            <a href="fields.html" class="active">시공분야</a> 
+            <a href="proposal.html">파트너십 제안서</a> <a href="portfolio.html">포트폴리오</a>
+            <a href="contact.html">문의하기</a>
+        </div>
+
+        <div class="fields-container">
+            
+            <div class="field-card">
+                <div class="card-title">PRIVATE WORKS (민수공사)</div>
+                <div class="category-group">
+                    <div class="cat-name">웨딩홀 및 연회장 공사</div>
+                    <ul class="project-list">
+                        <li>OO웨딩홀 신축 내장공사</li>
+                        <li>컨벤션 센터 연회장 인테리어</li>
+                    </ul>
+                </div>
+                <div class="category-group">
+                    <div class="cat-name">행사장 및 전시 공간</div>
+                    <ul class="project-list">
+                        <li>OO 엑스포 특별 전시부스 조성공사</li>
+                    </ul>
+                </div>
+                <div class="category-group">
+                    <div class="cat-name">기타 상업/업무 시설</div>
+                    <ul class="project-list">
+                        <li>OO 복합 상업시설 프리미엄 인테리어</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="field-card">
+                <div class="card-title">PUBLIC WORKS (관급공사)</div>
+                <div class="category-group">
+                    <div class="cat-name">환경개선 공사</div>
+                    <ul class="project-list">
+                        <li>OO초등학교 실내 환경개선 및 보수공사</li>
+                    </ul>
+                </div>
+                <div class="category-group">
+                    <div class="cat-name">리모델링 및 시설공사</div>
+                    <ul class="project-list">
+                        <li>여주 시니어클럽 복지시설 내장공사</li>
+                        <li>공공도서관 열람실 리모델링</li>
+                    </ul>
+                </div>
+                <div class="category-group">
+                    <div class="cat-name">기타 관급공사</div>
+                    <ul class="project-list">
+                        <li>OO시청 민원실 환경정비 공사</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

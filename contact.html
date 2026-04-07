@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의하기 | 하이체크 D&C</title>
+    <style>
+        /* 기본 배경 */
+        body {
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            margin: 0;
+            font-family: 'Malgun Gothic', sans-serif;
+            color: #eeeeee;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 상단 네비게이션 바 */
+        .top-nav {
+            width: 100%; padding: 40px 0;
+            display: flex; justify-content: center; gap: 60px;
+        }
+        .top-nav a {
+            color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; opacity: 0.7; transition: 0.3s;
+        }
+        .top-nav a:hover, .top-nav a.active {
+            opacity: 1; color: #CBA171;
+        }
+
+        /* ⭐️ 반투명 흑유리 명판 */
+        .contact-box {
+            background: rgba(30, 30, 30, 0.7); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 15px; 
+            padding: 70px 80px; 
+            max-width: 600px; 
+            width: 85%;
+            margin-top: 50px; 
+            margin-bottom: 80px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+            text-align: center;
+        }
+
+        /* 제목 영역 */
+        .contact-box h2 {
+            font-size: 32px; color: #CBA171; margin-top: 0; margin-bottom: 10px; letter-spacing: 2px;
+        }
+        .contact-box .subtitle {
+            font-size: 16px; color: #aaaaaa; margin-bottom: 50px; letter-spacing: 1px;
+        }
+
+        /* 연락처 정보 리스트 */
+        .info-list {
+            text-align: left;
+            margin-bottom: 50px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 30px 0;
+        }
+        .info-item {
+            margin-bottom: 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .info-item:last-child { margin-bottom: 0; }
+        .info-label {
+            color: #CBA171;
+            font-weight: bold;
+            width: 100px; /* 라벨 넓이를 고정하여 정갈하게 줄맞춤 */
+            flex-shrink: 0;
+        }
+        .info-value {
+            color: #dddddd;
+            line-height: 1.5;
+        }
+
+        /* ⭐️ 터치 연결 버튼 (전화 / 이메일) */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .action-btn {
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #191919;
+            background-color: #CBA171;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .action-btn:hover {
+            background-color: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .action-btn.outline {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .action-btn.outline:hover {
+            border-color: #ffffff;
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* 모바일 최적화 */
+        @media (max-width: 600px) {
+            .contact-box { padding: 50px 30px; }
+            .info-item { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .top-nav { gap: 20px; font-size: 14px; flex-wrap: wrap; }
+            .action-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        
+        <div class="top-nav">
+            <a href="index.html">HOME</a>
+            <a href="about.html">회사소개</a>
+            <a href="fields.html">시공분야</a>
+            <a href="proposal.html">파트너십제안서</a>
+            <a href="portfolio.html">포트폴리오</a>
+            <a href="contact.html" class="active">문의하기</a> </div>
+
+        <div class="contact-box">
+            <h2>CONTACT US</h2>
+            <div class="subtitle">프로젝트 및 시공문의는 아래 연락처나 이메일로 문의주세요</div>
+
+            <div class="info-list">
+                <div class="info-item">
+                    <div class="info-label">Company</div>
+                    <div class="info-value">(주)하이체크 D&C</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Address</div>
+                    <div class="info-value">경기도 남양주시 다산중앙로 19번길 25-23 F504호</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Phone</div>
+                    <div class="info-value">010-4828-1149</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Email</div>
+                    <div class="info-value">kh73kim@naver.com</div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <a href="tel:033-000-0000" class="action-btn">📞 전화 상담하기</a>
+                <a href="mailto:info@hicheck.com" class="action-btn outline">✉️ 이메일 보내기</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

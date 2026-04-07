@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>하이체크 D&C | 공간의 가치를 증명하는 기록</title>
+    <style>
+        /* 1. 기본 마감 설정 */
+        body {
+            background-color: #191919; 
+            margin: 0; 
+            font-family: 'Malgun Gothic', sans-serif;
+            color: white;
+            overflow-x: hidden; 
+        }
+        
+        /* 2. 대문(1단) 설정 */
+        .header-section {
+            background-image: url('bg.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 100vh; 
+            position: relative; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 상단 메뉴바 */
+        .top-nav {
+            position: absolute; top: 0; width: 100%; padding: 40px 0;
+            display: flex; justify-content: center; gap: 60px; z-index: 10;
+        }
+        .top-nav a { color: white; text-decoration: none; font-size: 17px; font-weight: bold; opacity: 0.7; transition: 0.3s; }
+        .top-nav a:hover, .top-nav a.active { opacity: 1; color: #CBA171; }
+
+        /* 중앙 로고 및 버튼 */
+        .logo-img { width: 400px; max-width: 50%; margin-bottom: 40px; filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5)); }
+        .cta-btn { padding: 15px 40px; font-size: 18px; font-weight: bold; color: white; text-decoration: none; border: 2px solid rgba(255,255,255,0.7); border-radius: 50px; transition: 0.3s; }
+        .cta-btn:hover { background-color: #CBA171; border-color: #CBA171; color: #191919; }
+
+        /* 스크롤 유도 화살표 애니메이션 */
+        .scroll-arrow {
+            position: absolute; bottom: 30px;
+            animation: bounce 2s infinite; 
+            cursor: pointer;
+            text-decoration: none; 
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* 3. 책장 영역(2단) 설정 */
+        .bookshelf-section {
+            padding: 100px 20px;
+            text-align: center;
+            background-color: #191919;
+        }
+        .section-title { font-size: 32px; margin-bottom: 60px; color: #CBA171; }
+        
+        .shelf-container {
+            display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;
+        }
+        
+        .book-item {
+            width: 300px; background: #252525; padding: 20px; border-radius: 10px;
+            transition: 0.3s; cursor: pointer; text-decoration: none; color: white; display: block;
+        }
+        .book-item:hover { transform: translateY(-15px); background: #333; }
+        
+        /* 책 표지 설정 */
+        .book-cover { 
+            width: 100%; height: 420px; background: #444; margin-bottom: 20px; border-radius: 5px; 
+            border: 1px solid rgba(255,255,255,0.1); box-sizing: border-box;
+        } 
+        
+        /* ⭐️ 책 제목 메인 폰트 설정 */
+        .book-title { font-size: 18px; font-weight: bold; line-height: 1.4; }
+        /* ⭐️ 책 부제목(한글) 폰트 설정 */
+        .book-subtitle { font-size: 14px; font-weight: normal; color: #aaaaaa; display: block; margin-top: 5px; }
+
+        /* 4. 카피라이트(푸터) 설정 */
+        footer {
+            padding: 50px 0; background-color: #111; border-top: 1px solid #333;
+            font-size: 14px; color: #888; line-height: 1.8; text-align: center;
+        }
+
+        /* 모바일 최적화 */
+        @media (max-width: 800px) {
+            .top-nav { gap: 20px; font-size: 14px; flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header-section">
+        <div class="top-nav">
+            <a href="index.html" class="active">HOME</a> 
+            <a href="about.html">회사소개</a> 
+            <a href="fields.html">시공분야</a> 
+            <a href="proposal.html">파트너십 제안서</a> 
+            <a href="portfolio.html">포트폴리오</a> 
+            <a href="contact.html">문의하기</a>
+        </div>
+        
+        <img src="logo.png" class="logo-img" alt="하이체크 D&C 로고">
+        
+        <a href="#bookshelf" class="cta-btn">파트너십 제안서 확인하기</a>
+        
+        <a href="#bookshelf" class="scroll-arrow">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </a>
+    </div>
+
+    <div class="bookshelf-section" id="bookshelf">
+        <div class="section-title">디지털 레퍼런스 아카이브</div>
+        <div class="shelf-container">
+            
+            <a href="profile.pdf" target="_blank" class="book-item">
+                <div class="book-cover" style="background-image: url('cover1.jpg'); background-size: cover; background-position: center top;"></div> 
+                <div class="book-title">
+                    COMPANY BRAND LETTER<br>
+                    <span class="book-subtitle">(파트너십 안내문)</span>
+                </div>
+            </a>
+            
+            <a href="reference.pdf" target="_blank" class="book-item">
+                <div class="book-cover" style="background-image: url('cover2.jpg'); background-size: cover; background-position: center top;"></div> 
+                <div class="book-title">인테리어 시공 레퍼런스 북</div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <div>(주)하이체크 D&C | 대표자: 김찬회 | 사업자등록번호: 248-36-01731</div>
+        <div>본사:경기도 남양주시 다산중앙로 19번길 23-25 F504호| 이메일: kh73kim@naver.com</div>
+        <div style="margin-top: 20px; letter-spacing: 1px;">&copy; 2026 HI-CHECK D&C. All Rights Reserved.</div>
+    </footer>
+
+</body>
+</html>
