@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>파트너십 제안서 | 하이체크 D&C</title>
     <style>
-        /* 1. 배경 및 기본 설정 */
         body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%; 
             background-color: #191919; overflow: hidden; 
             font-family: 'Malgun Gothic', sans-serif;
         }
 
-        /* 2. 상단 퇴로 확보 (네비게이션 바) */
+        /* 상단 퇴로 확보 */
         .header-bar {
             position: fixed; top: 0; left: 0; width: 100%; height: 60px;
             background: rgba(20, 20, 20, 0.95);
@@ -24,31 +23,40 @@
             color: #CBA171; text-decoration: none; font-weight: bold; font-size: 15px;
             display: flex; align-items: center; gap: 8px;
         }
-        .header-title { color: #ffffff; font-size: 14px; opacity: 0.8; }
-
-        /* 3. PDF 관람창 (프레임 갇힘 방지) */
-        .pdf-viewer {
+        
+        /* PDF 뷰어 영역 */
+        .pdf-container {
             position: absolute; top: 60px; left: 0; width: 100%; height: calc(100% - 60px);
-            border: none;
+            background-color: #333;
         }
+        iframe { width: 100%; height: 100%; border: none; }
 
-        /* 4. 모바일 대응 */
-        @media (max-width: 600px) {
-            .header-title { display: none; } /* 모바일에선 제목 숨기고 버튼만 강조 */
-            .back-btn { font-size: 14px; }
+        /* 하단 긴급 다운로드 버튼 (뷰어가 안 뜰 경우 대비) */
+        .footer-link {
+            position: fixed; bottom: 10px; width: 100%; text-align: center;
+            z-index: 50; font-size: 12px;
         }
+        .footer-link a { color: rgba(255,255,255,0.5); text-decoration: none; }
     </style>
 </head>
 <body>
 
     <div class="header-bar">
         <a href="index.html" class="back-btn">🧩 메인으로 돌아가기</a>
-        <div class="header-title">HI-CHECK D&C PARTNERSHIP PROPOSAL</div>
+        <div style="color:#fff; font-size:13px; opacity:0.6;">Partnership Proposal</div>
     </div>
 
-    <iframe src="hi-check-proposal.pdf" class="pdf-viewer">
-        <p>브라우저가 PDF 보기를 지원하지 않습니다. <a href="hi-check-proposal.pdf">여기에서 다운로드</a> 하세요.</p>
-    </iframe>
+    <div class="pdf-container">
+        <script>
+            // 현재 사이트의 주소를 자동으로 파악해서 PDF 경로를 완성합니다.
+            var pdfUrl = window.location.origin + "/hi-check-proposal.pdf";
+            document.write('<iframe src="https://docs.google.com/viewer?url=' + encodeURIComponent(pdfUrl) + '&embedded=true"></iframe>');
+        </script>
+    </div>
+
+    <div class="footer-link">
+        <a href="hi-check-proposal.pdf" target="_blank">문서가 안 보이나요? 직접 열기 ➔</a>
+    </div>
 
 </body>
 </html>
