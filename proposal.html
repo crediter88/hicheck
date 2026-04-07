@@ -5,44 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>파트너십 제안서 | 하이체크 D&C</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; background-color: #191919; overflow: hidden; font-family: 'Malgun Gothic', sans-serif; }
+        body { margin: 0; padding: 0; background-color: #191919; font-family: 'Malgun Gothic', sans-serif; color: white; }
         
         /* 상단 고정 바 (퇴로 확보) */
         .header-bar {
             position: fixed; top: 0; left: 0; width: 100%; height: 60px;
-            background: #111111;
+            background: rgba(17, 17, 17, 0.95);
             display: flex; align-items: center; justify-content: space-between;
             padding: 0 20px; box-sizing: border-box; z-index: 100;
             border-bottom: 1px solid #CBA171;
+            backdrop-filter: blur(10px);
         }
         .back-btn { color: #CBA171; text-decoration: none; font-weight: bold; font-size: 15px; display: flex; align-items: center; gap: 8px; }
-        
-        /* ⭐️ 로딩 속도 개선을 위한 PDF 전용 컨테이너 */
-        .pdf-container { 
-            position: absolute; top: 60px; left: 0; width: 100%; height: calc(100% - 60px); 
-            background-color: #333; 
-        }
 
-        /* ⭐️ 아이폰에서 삐져나가는 현상을 방지하는 '객체 삽입' 방식 */
-        object, embed, iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        /* 제안서 이미지 영역 */
+        .proposal-content { margin-top: 60px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .proposal-content img { width: 100%; max-width: 900px; height: auto; display: block; }
+
+        /* 하단 다운로드 안내 */
+        .footer-info { padding: 50px 20px; text-align: center; background-color: #111; }
+        .download-link { color: #CBA171; text-decoration: none; border: 1px solid #CBA171; padding: 10px 20px; border-radius: 5px; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <div class="header-bar">
         <a href="index.html" class="back-btn">🧩 메인으로 돌아가기</a>
-        <div style="color:#CBA171; font-size:13px;">HI-CHECK PROPOSAL</div>
+        <div style="color:#CBA171; font-size:13px; font-weight:bold;">HI-CHECK D&C PROPOSAL</div>
     </div>
 
-    <div class="pdf-container">
-        <object data="hi-check-proposal.pdf" type="application/pdf">
-            <embed src="hi-check-proposal.pdf" type="application/pdf" />
-            <iframe src="hi-check-proposal.pdf"></iframe>
-        </object>
+    <div class="proposal-content">
+        <img src="proposal/proposal_01.png" alt="제안서 01페이지">
+        <img src="proposal/proposal_02.png" alt="제안서 02페이지">
+        <img src="proposal/proposal_03.png" alt="제안서 03페이지">
+        <img src="proposal/proposal_04.png" alt="제안서 04페이지">
+        <img src="proposal/proposal_05.png" alt="제안서 05페이지">
+        <img src="proposal/proposal_06.png" alt="제안서 06페이지">
+        <img src="proposal/proposal_07.png" alt="제안서 07페이지">
+        <img src="proposal/proposal_08.png" alt="제안서 08페이지">
+        <img src="proposal/proposal_09.png" alt="제안서 09페이지">
+        <img src="proposal/proposal_10.png" alt="제안서 10페이지">
+        <img src="proposal/proposal_11.png" alt="제안서 11페이지">
+        <img src="proposal/proposal_12.png" alt="제안서 12페이지">
+        <img src="proposal/proposal_13.png" alt="제안서 13페이지">
+        <img src="proposal/proposal_14.png" alt="제안서 14페이지">
+    </div>
+
+    <div class="footer-info">
+        <p style="font-size: 13px; color: #888; margin-bottom: 20px;">공식 제안서 원본 파일(PDF)이 필요하신가요?</p>
+        <a href="proposal/hi-check-proposal.pdf" class="download-link" target="_blank">원본 PDF 다운로드</a>
     </div>
 
 </body>
